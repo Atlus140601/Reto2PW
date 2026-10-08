@@ -1,0 +1,320 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #393C3E;
+    padding: 20px;
+    line-height: 1.5;
+}
+
+/*
+   CONTENEDOR PRINCIPAL
+ */
+#contenedor {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+/*
+   CABECERA / BANNER
+*/
+#cabecera {
+    width: 100%;
+    background-color: #ffffff;
+}
+
+#cabecera img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/*
+   CUERPO PRINCIPAL
+*/
+#cuerpo {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 450px;
+}
+
+/*
+    Sección de contenido (izquierda)
+*/
+#cuerpo section {
+    flex: 1 1 65%;
+    background-color: #D5E6F5; 
+    padding: 25px 30px;
+}
+
+#cuerpo section h2 {
+    font-size: 20px;
+    color: #000000;
+    margin-bottom: 15px;
+}
+
+#cuerpo section p {
+    font-size: 14px;
+    color: #1a1a1a;
+    text-align: justify;
+    margin-bottom: 15px;
+}
+
+#cuerpo section p:last-child {
+    margin-bottom: 0;
+}
+
+/*
+    Menú lateral (derecha)
+*/
+#menu_lateral {
+    flex: 1 1 30%;
+    background-color: #1C6087; 
+    padding: 25px 20px;
+}
+
+#menu_lateral ul {
+    list-style: none;
+}
+
+#menu_lateral li {
+    margin-bottom: 18px;
+}
+
+#menu_lateral a {
+    color: #ffffff;
+    text-decoration: underline;
+    font-size: 15px;
+    transition: color 0.3s ease;
+}
+
+#menu_lateral a:hover {
+    color: #D5E6F5;
+}
+
+/*
+   PIE DE PÁGINA
+*/
+footer {
+    background-color: #ffffff;
+    text-align: center;
+    padding: 15px 20px;
+    font-size: 13px;
+    color: #333333;
+    border-top: 1px solid #cccccc;
+}
+
+footer a {
+    color: #1C6087;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+footer a:hover {
+    color: #393C3E;
+}
+
+/*
+   RESPONSIVE PANTALLAS PEQUEÑAS
+*/
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    #cuerpo {
+        flex-direction: column;
+    }
+
+    #cuerpo section,
+    #menu_lateral {
+        flex: 1 1 100%;
+        width: 100%;
+    }
+
+    #cuerpo section {
+        padding: 20px;
+    }
+
+    #menu_lateral {
+        padding: 20px;
+    }
+
+    #menu_lateral ul {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #cuerpo section h2 {
+        font-size: 18px;
+    }
+
+    #cuerpo section p {
+        font-size: 13px;
+    }
+
+    footer {
+        font-size: 12px;
+    }
+}
+
+/*
+   RESPONSIVE PANTALLAS MUY PEQUEÑAS
+*/
+@media (max-width: 480px) {
+    #cuerpo section,
+    #menu_lateral {
+        padding: 15px;
+    }
+
+    #cuerpo section h2 {
+        font-size: 16px;
+    }
+
+    #menu_lateral a {
+        font-size: 14px;
+    }
+}
+/*
+   ESTILOS DEL FORMULARIO
+*/
+
+#entrada_datos {
+    border: 1px solid #333333;
+    background-color: #D5E6F5;
+    padding: 15px 20px 20px 20px;
+    margin-top: 10px;
+}
+
+#entrada_datos legend {
+    font-size: 15px;
+    font-weight: bold;
+    color: #000000;
+    padding: 0 5px;
+}
+
+/* 
+    CADA FILA DEL FORMULARIO (label + input) 
+*/
+#entrada_nombre,
+#entrada_ci,
+#entrada_constrasenna,
+#confirmacion_contrasenna {
+    margin-bottom: 15px;
+}
+
+#entrada_nombre label,
+#entrada_ci label,
+#entrada_constrasenna label,
+#confirmacion_contrasenna label {
+    display: block;
+    font-size: 14px;
+    color: #000000;
+    margin-bottom: 5px;
+}
+
+#entrada_nombre input,
+#entrada_ci input,
+#entrada_constrasenna input,
+#confirmacion_contrasenna input {
+    width: 200px;
+    padding: 4px 6px;
+    border: 1px solid #7a7a7a;
+    font-size: 14px;
+    background-color: #ffffff;
+}
+
+#entrada_nombre input:focus,
+#entrada_ci input:focus,
+#entrada_constrasenna input:focus,
+#confirmacion_contrasenna input:focus {
+    outline: 2px solid #1C6087;
+}
+
+/* 
+    BOTONES ENVIAR / LIMPIAR
+*/
+.buttons {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.buttons button {
+    padding: 3px 12px;
+    font-size: 13px;
+    border: 1px solid #7a7a7a;
+    background-color: #e6e6e6;
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+.buttons button:hover {
+    background-color: #d0d0d0;
+}
+
+/* 
+    RESPONSIVE 
+*/
+@media (max-width: 768px) {
+    #entrada_nombre input,
+    #entrada_ci input,
+    #entrada_constrasenna input,
+    #confirmacion_contrasenna input {
+        width: 100%;
+    }
+}
+
+/*
+   ESTILOS DE VALIDACIÓN
+*/
+
+.error {
+    display: block;
+    color: #c0392b;
+    font-size: 12px;
+    margin-top: 4px;
+    font-weight: bold;
+}
+
+input.input-error {
+    border: 2px solid #c0392b;
+    background-color: #fdecea;
+}
+
+input.input-ok {
+    border: 2px solid #27ae60;
+}
+
+#mensaje_general {
+    display: none;
+    padding: 10px 15px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#mensaje_general.exito {
+    display: block;
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+#mensaje_general.fracaso {
+    display: block;
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}

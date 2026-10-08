@@ -1,0 +1,186 @@
+/* ============================================
+   RESET
+   ============================================ */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body {
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background: #f8fafc;
+  color: #1e293b;
+}
+
+/* ============================================
+   GRID PRINCIPAL
+   ============================================ */
+body {
+  display: grid;
+  grid-template-columns: 200px 1fr 1fr 1fr;
+  grid-template-rows: auto 1fr;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+/* ============================================
+   FOTO — arriba a la izquierda
+   ============================================ */
+body > img {
+  grid-column: 1;
+  grid-row: 1;
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 16px;
+  border: 4px solid #38bdf8;
+  box-shadow: 0 10px 25px rgba(56, 189, 248, .25);
+}
+
+/* ============================================
+   CABECERA — a la derecha de la foto
+   ============================================ */
+.cabecera {
+  grid-column: 2 / 5;
+  grid-row: 1;
+  align-self: center;
+}
+
+.cabecera h1 {
+  font-size: 1.8rem;
+  color: #0f172a;
+  margin-bottom: .3rem;
+}
+
+.cabecera h2 {
+  font-size: 1.05rem;
+  color: #38bdf8;
+  font-weight: 500;
+  margin-bottom: .8rem;
+}
+
+.cabecera p {
+  font-size: .9rem;
+  color: #475569;
+  line-height: 1.5;
+  max-width: 700px;
+}
+
+/* ============================================
+   SECCIONES — fila 2
+   ============================================ */
+#educacion   { grid-column: 1 / 2; grid-row: 2; }
+#proyectos   { grid-column: 2 / 3; grid-row: 2; }
+#experiencia { grid-column: 3 / 5; grid-row: 2; }
+
+section > h2 {
+  font-size: 1rem;
+  color: #0f172a;
+  margin-bottom: .8rem;
+  border-left: 4px solid #38bdf8;
+  padding-left: .6rem;
+}
+
+/* ============================================
+   EDUCACIÓN
+   ============================================ */
+.edu-flecha {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.edu-padre {
+  background: #0f172a;
+  color: #fff;
+  padding: .6rem .9rem;
+  border-radius: 10px;
+  text-align: center;
+  position: relative;
+}
+
+.edu-padre h3 { font-size: .95rem; color: #38bdf8; }
+.edu-padre p  { font-size: .8rem; color: #cbd5e1; }
+
+.edu-padre::after {
+  content: '';
+  position: absolute;
+  bottom: -8px; left: 50%;
+  transform: translateX(-50%);
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid #0f172a;
+}
+
+.edu-hijas {
+  display: flex;
+  flex-direction: column;
+  gap: .4rem;
+  padding-left: 1.2rem;
+  position: relative;
+}
+
+.edu-hijas::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 2px;
+  background: #38bdf8;
+}
+
+.edu-hija {
+  background: #fff;
+  padding: .5rem .8rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,.06);
+  position: relative;
+}
+
+.edu-hija::before {
+  content: '';
+  position: absolute;
+  left: -1.2rem; top: 50%;
+  width: 1.2rem; height: 2px;
+  background: #38bdf8;
+}
+
+.edu-hija h3 { font-size: .85rem; color: #0f172a; }
+.edu-hija p  { font-size: .75rem; color: #64748b; }
+
+/* ============================================
+   PROYECTOS Y EXPERIENCIA
+   ============================================ */
+.proyectos-vacio,
+.experiencia-vacia {
+  background: #fff;
+  padding: 1rem 1.2rem;
+  border-radius: 10px;
+  border: 2px dashed #cbd5e1;
+  text-align: center;
+  color: #64748b;
+  font-size: .85rem;
+}
+
+/* ============================================
+   RESPONSIVE — móvil
+   ============================================ */
+@media (max-width: 800px) {
+  html, body { height: auto; overflow: auto; }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem 1rem;
+  }
+
+  body > img {
+    margin: 0 auto 1rem;
+    width: 140px;
+    height: 140px;
+  }
+
+  .cabecera { text-align: center; }
+  .cabecera h1 { font-size: 1.4rem; }
+  .cabecera p { max-width: 100%; margin-bottom: 1.5rem; }
+
+  section { margin-bottom: 2rem; }
+}

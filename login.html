@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Registro - Mozilla Firefox</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+	<div id="contenedor">
+		<header id="cabecera">
+			<img src="banner.jpg" alt="Mozilla Firefox">
+		</header>
+		<main id="cuerpo">
+			<section>
+				<h2>Formulario de Registro</h2>
+				<div id="mensaje_general"></div>
+				<form id="formulario_registro"novalidate></form>
+					<fieldset id="entrada_datos">
+						<legend>Entrada de Datos</legend>
+						
+						<div id="entrada_nombre">
+							<label for="nombre">Nombre</label>
+							<input type="text" name="nombre" id="nombre">
+							<span class="error" id="error_nombre"></span>
+						</div>
+						
+						<div id="entrada_ci">
+							<label for="ci">CI</label>
+							<input type="text" name="ci" id="ci" maxlength="11">
+							<span class="error" id="error_ci"></span>
+						</div>
+						
+						<div id="entrada_constrasenna">
+							<label for="contrasenna">Contraseña</label>
+							<input type="password" name="contrasenna" id="contrasenna">
+							<span class="error" id="error_contrasenna"></span>
+						</div>
+						
+						<div id="confirmacion_contrasenna">
+							<label for="confirmacion">Confiramción</label>
+							<input type="password" name="confirmacion" id="confirmacion">
+							<span class="error" id="error_confirmacion"></span>
+						</div>
+						
+						<div class="buttons">
+							<button type="submit">Enviar</button>
+							<button type="reset" id="btn_limpiar">Limpiar</button>
+						</div>
+
+					</fieldset>
+				</form>
+			</section>
+			<aside id="menu_lateral">
+				<ul>
+					<li><a href="index.html">Inicio</a></li>
+					<li><a href="#">Formulario de Registro</a></li>
+				</ul>
+			</aside>
+		</main>
+		<footer>
+			<p>
+				Evaluación Final realizada por <a href="Portafolio/Portafolio.html">Yordis Daniel Rodríguez Álvarez</a>. Estándares web empleados: XHTML 1.0 Strict y CSS
+			</p>
+		</footer>
+	</div>
+	<script src="scripts.js"></script>
+</body>
